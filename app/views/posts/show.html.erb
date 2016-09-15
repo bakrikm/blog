@@ -11,6 +11,9 @@
 <div class="container">
   <p><%= @post.body %></p>
   <%= image_tag @post.picture, :class=>"img-circle bakri"  %>
-  <%= link_to 'Edit', edit_post_path(@post),:class=>"btn btn-success"%>
   <%= link_to 'Back', posts_path,:class=>"btn btn-default" %>
+  <% if user_signed_in? %>
+  <%= link_to 'Edit', edit_post_path(@post),:class=>"btn btn-success"%>
+  
+  <% end %>
 </div>
